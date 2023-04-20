@@ -8,6 +8,7 @@ import { MenuLateralComponent } from './publico/pagina-maestra/menu-lateral/menu
 import { RutaNoEncontradaComponent } from './publico/errores/ruta-no-encontrada/ruta-no-encontrada.component';
 import { ErrorDeServidorComponent } from './publico/errores/error-de-servidor/error-de-servidor.component';
 import { PiePaginaComponent } from './publico/pagina-maestra/pie-pagina/pie-pagina.component';
+import { InicioComponent } from './publico/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PiePaginaComponent } from './publico/pagina-maestra/pie-pagina/pie-pagi
     MenuLateralComponent,
     RutaNoEncontradaComponent,
     ErrorDeServidorComponent,
-    PiePaginaComponent
+    PiePaginaComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
