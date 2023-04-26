@@ -9,6 +9,7 @@ import { RutaNoEncontradaComponent } from './publico/errores/ruta-no-encontrada/
 import { ErrorDeServidorComponent } from './publico/errores/error-de-servidor/error-de-servidor.component';
 import { PiePaginaComponent } from './publico/pagina-maestra/pie-pagina/pie-pagina.component';
 import { InicioComponent } from './publico/inicio/inicio.component';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InicioComponent } from './publico/inicio/inicio.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
