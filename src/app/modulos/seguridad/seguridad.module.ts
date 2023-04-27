@@ -12,6 +12,7 @@ import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.
 import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-usuario.component';
 import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegistroPublicoUsuariosComponent } from './registro-publico-usuarios/registro-publico-usuarios.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CrearUsuarioComponent,
     ListarUsuarioComponent,
     EliminarUsuarioComponent,
-    CerrarSesionComponent
+    CerrarSesionComponent,
+    RegistroPublicoUsuariosComponent
   ],
   imports: [
     CommonModule,
