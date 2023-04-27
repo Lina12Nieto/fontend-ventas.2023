@@ -86,8 +86,31 @@ export class SeguridadService {
     }else{
       let datosString = JSON.stringify(datos);
       localStorage.setItem("datos-sesion", datosString)
+      this.ActualizarComportamientoUsuario(datos);
       return true;
     }
+  }
+
+  RecuperarClavePorUsuario(usuario: string):Observable<UsuarioModel>{
+    return this.http.post<UsuarioModel> (`${this.urlBase}recuperar-clave`,{
+      correo: usuario
+    });
+  }
+  /**
+   * Cerrando sesion
+   */
+
+  RemoverDatosUsuarioValidado(){
+    let datosUsuario = localStorage.getItem("datos-usuario");
+    let datosSesion = localStorage.getItem("datos-sesion");
+    if(datosUsuario){
+      localStorage.removeItem("datos-usuario");
+    }
+    if(datosSesion){
+      localStorage.removeItem("datos-sesion");
+    }
+    this.ActualizarComportamientoUsuario(new UsuarioValidadoModel())
+    
   }
 
   /** Adimistracion de la sesion de usuario */
