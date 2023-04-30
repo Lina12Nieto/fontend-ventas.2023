@@ -138,7 +138,7 @@ export class SeguridadService {
 
   ValidarHashUsuarioPublico(hash: string): Observable<boolean>{
     return this.http.post<boolean>(`${this.urlBase}validar-hash-usuario`,{
-      codigoHash: hash
+      codigohash: hash
     });
   }
 }
