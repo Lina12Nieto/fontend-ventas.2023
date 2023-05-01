@@ -7,4 +7,3 @@ function iniciarMenuLateral(){
       });
 }
 iniciarMenuLateral();
-alert("Hola desde funcionesM.js");

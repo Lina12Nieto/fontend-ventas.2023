@@ -112,6 +112,7 @@ export class SeguridadService {
     if(datosSesion){
       localStorage.removeItem("datos-sesion");
     }
+    localStorage.removeItem("menu-lateral");
     this.ActualizarComportamientoUsuario(new UsuarioValidadoModel())
     
   }
@@ -145,7 +146,7 @@ export class SeguridadService {
     });
   }
 
-  ConstruirMenuLateral(permisos:PermisoModel[]): ItemMenuModel[]{
+  ConstruirMenuLateral(permisos:PermisoModel[]){
     let menu: ItemMenuModel[]=[];
     
     permisos.forEach((permiso)=> {
@@ -160,6 +161,27 @@ export class SeguridadService {
         menu.push(item);
       }
     });
+    this.AlmacenarItemsMenuLateral(menu);
+  }
+
+  /**
+   * 
+   * @param itemsMenu  items del menu a guardar en localStorage
+   */
+
+  AlmacenarItemsMenuLateral(itemsMenu: ItemMenuModel[]){
+    let menuStr = JSON.stringify(itemsMenu);
+    localStorage.setItem("menu-lateral",menuStr);
+  }
+  /**
+   * @returns lista con items del menu
+   */
+  ObtenerItemsMenuLateral():ItemMenuModel[]{
+    let menu : ItemMenuModel[] = [];
+    let menuStr = localStorage.getItem("menu-lateral");
+    if(menuStr){
+      menu = JSON.parse(menuStr)
+    }
     return menu;
   }
 }
