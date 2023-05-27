@@ -45,9 +45,14 @@ export class IdentificacionTwofaComponent {
       let codigo2fa = this.ObtenerFormGroup["codigo"].value;
       this.servicioSeguridad.ValidarCodigo2FA(this.usuarioId, codigo2fa).subscribe({
         next: (datos:UsuarioValidadoModel)=>{
+
           console.log(datos);
-          this.servicioSeguridad.AlmacenarDatosUsuarioValidado(datos);
-          this.router.navigate([""]);
+          if(datos.token != null && datos.token != undefined && datos.token !=""){
+            this.servicioSeguridad.AlmacenarDatosUsuarioValidado(datos);
+            this.router.navigate([""]);
+          }else{
+            alert("Este codigo en invalido")
+          }
         },
         error: (err) => {
           console.log(err);
